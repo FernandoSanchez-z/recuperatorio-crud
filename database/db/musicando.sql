@@ -71,7 +71,7 @@ DROP TABLE IF EXISTS `canciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `canciones` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `titulo` varchar(45) DEFAULT NULL,
   `duracion` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -88,8 +88,6 @@ CREATE TABLE `canciones` (
   CONSTRAINT `canciones_generos` FOREIGN KEY (`genero_id`) REFERENCES `generos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE `canciones` AUTO_INCREMENT = 1;
-
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +98,6 @@ LOCK TABLES `canciones` WRITE;
 /*!40000 ALTER TABLE `canciones` DISABLE KEYS */;
 /*!40000 ALTER TABLE `canciones` ENABLE KEYS */;
 UNLOCK TABLES;
-
 
 --
 -- Table structure for table `generos`
