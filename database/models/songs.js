@@ -32,8 +32,9 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: 'canciones',
-        timestamps: false,
-        underscored: true
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at'
     }
 
     const Song = sequelize.define(alias, cols, config);

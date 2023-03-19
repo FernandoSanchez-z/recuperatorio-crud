@@ -30,9 +30,9 @@ const songsController = {
 
     updateSong: (req, res) => {
 
-        db.Curso.update ({
+        db.Song.update({
             titulo: req.body.title,
-            duracion: req.body.price,
+            duracion: req.body.duration,
             genero_id: req.body.genreId,
             album_id: req.body.albumId,
             artista_id: req.body.artistId,
@@ -43,35 +43,37 @@ const songsController = {
         })
         .catch(error =>res.send(error))
 
+        res.send("se actualizo correctamente la cancion: " + req.body.title)
+
     },
 
     deleteSong: (req, res) => {
         
-        db.Curso.destroy({
+        db.Song.destroy({
             where: {
                 id : req.params.id
             }
         })
         .catch(error => res.send(error))
 
+        res.send("se elimino correctamente la cancion: " + req.params.id)
+
     },
 
     createSong: (req, res) => {
-    
-        if(!errors.isEmpty()) {
-            return res.send("something went wrong");
-        } 
 
         const _body = { 
-            title : req.body.title,
-            parrafo: req.body.parrafo,
-            price: req.body.price,
-            image : req.file.filename,
-            number : req.body.number,
+            titulo: req.body.title,
+            duracion: req.body.duration,
+            genero_id: req.body.genreId,
+            album_id: req.body.albumId,
+            artista_id: req.body.artistId,
         }
 
         db.Song.create(_body)
         .catch(error => res.send(error))
+
+        res.send("se creo correctamente la cancion: " + req.body.title)
         
     }
 

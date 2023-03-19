@@ -12,7 +12,7 @@ const genresController = {
 
         db.Genre.findAll()
         .then(genres => {
-            return res.send({genres, longitud: songs.length})
+            return res.send({genres, longitud: genres.length})
         })
         .catch(error => res.send(error))
 
