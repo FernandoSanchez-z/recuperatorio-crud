@@ -121,6 +121,23 @@ LOCK TABLES `generos` WRITE;
 /*!40000 ALTER TABLE `generos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `generos` ENABLE KEYS */;
 UNLOCK TABLES;
+
+USE canciones;
+
+INSERT INTO albumes (nombre, duracion) VALUES ("The Gray Chapter", 60);
+
+SELECT * FROM albumes;
+
+INSERT INTO artistas (nombre, apellido) VALUES ("Corey", "Taylor");
+
+SELECT * FROM artistas;
+
+INSERT INTO generos (name) VALUES ("Nu Metal");
+
+SELECT * FROM generos;
+
+SELECT * FROM canciones;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
