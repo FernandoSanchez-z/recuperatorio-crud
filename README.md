@@ -6,6 +6,6 @@
 - PUT: "/canciones/:id" (update song)
 - DELETE: "/canciones/:id" (delete song)
 
-# Gentes Endpoints:
+# Genres Endpoints:
 
 - GET: "/generos" (list genres)
