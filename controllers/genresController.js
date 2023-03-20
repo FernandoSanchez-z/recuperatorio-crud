@@ -12,7 +12,13 @@ const genresController = {
 
         db.Genre.findAll()
         .then(genres => {
-            return res.send({genres, longitud: genres.length})
+            return res.status(200).json({
+                requestInfo: {
+                    statusCode: 200,
+                    total: genres.length
+                },
+                reponses: genres
+            })
         })
         .catch(error => res.send(error))
 

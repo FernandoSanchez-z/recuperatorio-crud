@@ -12,7 +12,13 @@ const songsController = {
 
         db.Song.findAll()
         .then(songs => {
-            return res.send({songs, longitud: songs.length})
+            return res.status(200).json({
+                requestInfo: {
+                    statusCode: 200,
+                    total: songs.length
+                },
+                responses: songs
+            })
         })
         .catch(error => res.send(error))
 
@@ -23,7 +29,13 @@ const songsController = {
         db.Song.findByPk(req.params.id)
         .then(function(song) {
 
-            res.render({song});
+            return res.status(200).json({
+                requestInfo: {
+                    statusCode: 200
+                },
+                response: song
+            })
+
         })
 
     },
@@ -43,7 +55,12 @@ const songsController = {
         })
         .catch(error =>res.send(error))
 
-        res.send("se actualizo correctamente la cancion: " + req.body.title)
+        return res.status(200).json({
+            requestInfo: {
+                statusCode: 200
+            },
+            message: "se actualizo correctamente la cancion: " + req.body.title 
+        })
 
     },
 
@@ -56,7 +73,12 @@ const songsController = {
         })
         .catch(error => res.send(error))
 
-        res.send("se elimino correctamente la cancion: " + req.params.id)
+        return res.status(200).json({
+            requestInfo: {
+                statusCode: 200
+            },
+            message: "se elimino correctamente la cancion: " + req.params.id
+        })
 
     },
 
@@ -73,7 +95,12 @@ const songsController = {
         db.Song.create(_body)
         .catch(error => res.send(error))
 
-        res.send("se creo correctamente la cancion: " + req.body.title)
+        return res.status(200).json({
+            requestInfo: {
+                statusCode: 200
+            },
+            message: "se creo correctamente la cancion: " + req.body.title
+        })
         
     }
 

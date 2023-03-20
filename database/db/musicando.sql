@@ -125,14 +125,20 @@ UNLOCK TABLES;
 USE canciones;
 
 INSERT INTO albumes (nombre, duracion) VALUES ("The Gray Chapter", 60);
+INSERT INTO albumes (nombre, duracion) VALUES ("Day of the gusano", 60);
+INSERT INTO albumes (nombre, duracion) VALUES ("The subliminal verses", 60);
 
 SELECT * FROM albumes;
 
 INSERT INTO artistas (nombre, apellido) VALUES ("Corey", "Taylor");
+INSERT INTO artistas (nombre, apellido) VALUES ("Shawn", "Crahan");
+INSERT INTO artistas (nombre, apellido) VALUES ("Craig", "Jones");
 
 SELECT * FROM artistas;
 
 INSERT INTO generos (name) VALUES ("Nu Metal");
+INSERT INTO generos (name) VALUES ("Speed Metal");
+INSERT INTO generos (name) VALUES ("Heavy Metal");
 
 SELECT * FROM generos;
 
