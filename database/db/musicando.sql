@@ -144,6 +144,37 @@ SELECT * FROM generos;
 
 SELECT * FROM canciones;
 
+INSERT INTO canciones (titulo,duracion,genero_id,album_id,artista_id)
+VALUES
+(
+        "duality",
+        5,
+        1,
+        1,
+        1
+);
+
+
+INSERT INTO canciones (titulo,duracion,genero_id,album_id,artista_id)
+VALUES
+(
+        "the negative one",
+        5,
+        1,
+        1,
+        1
+);
+
+
+INSERT INTO canciones (titulo,duracion,genero_id,album_id,artista_id)
+VALUES
+(
+        "killpop",
+        5,
+        1,
+        1,
+        1
+);
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
